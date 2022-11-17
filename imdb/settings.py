@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-zpkpad%dxzqlxpr*j84e&_6v9v7fzr2=yup7553r%#1!vf23z=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['imdb--api.herokuapp.com', '*']
 
 
 # Application definition
@@ -186,5 +187,10 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:8000",
 ]
+
+import dj_database_url 
+prod_db  =  dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
+
 
 
