@@ -7,6 +7,7 @@ from actor.models import Celebrity, CelebrityRole
 # admin.site.register(CelebrityRole)
 # admin.site.register(Celebrity)
 # @admin.register(CelebrityDetail)
+
 @admin.register(Celebrity)
 class CelebrityAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'rank', 'gender', 'dob',
