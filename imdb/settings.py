@@ -184,7 +184,7 @@ PASSWORD_RESET_TIMEOUT = 900          # 900 Sec = 15 Min
 
 
 CORS_ALLOWED_ORIGINS = [
-    "https://imdb.vercel.app",
+    "https://imdb-pearl.vercel.app",
     "https://imdb--api.herokuapp.com",
 ]
 
