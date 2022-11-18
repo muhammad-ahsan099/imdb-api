@@ -1,1 +1,1 @@
-web: gunicorn authentication.wsgi --log-file -
+web: gunicorn djangoherokuapp.wsgi --log-file -
