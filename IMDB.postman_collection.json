@@ -1,0 +1,660 @@
+{
+	"info": {
+		"_postman_id": "6f82c5bc-2406-40fb-bdcb-750f8b3e701b",
+		"name": "IMDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17797446"
+	},
+	"item": [
+		{
+			"name": "Recent Released Movies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n            \"title\": \"Test 3\",\n            \"year\": \"2022\",\n            \"desciption\": \"\",\n            \"released\": \"02/10/2022\",\n            \"runtime\": \"189\",\n            \"language\": \"English\",\n            \"country\": \"Pakistan\",\n            \"metascore\": \"89\",\n            \"imdb_rating\": \"6.5\",\n            \"imdb_votes\": \"1121212\",\n            \"budget\": \"123\",\n            \"box_office\": \"12312\",\n            \"genre\": 2,\n            \"image_gallery\": [\n                1\n            ],\n            \"video_gallery\": [\n                1\n            ],\n            \"director\": [4],\n            \"writer\": [4],\n            \"actors\": [4],\n            \"producer\": [4]    \n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{prodURL}}/api/movies/recent-released/",
+					"host": [
+						"{{prodURL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						"recent-released",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movie Detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n            \"title\": \"Test 3\",\n            \"year\": \"2022\",\n            \"desciption\": \"\",\n            \"released\": \"02/10/2022\",\n            \"runtime\": \"189\",\n            \"language\": \"English\",\n            \"country\": \"Pakistan\",\n            \"metascore\": \"89\",\n            \"imdb_rating\": \"6.5\",\n            \"imdb_votes\": \"1121212\",\n            \"budget\": \"123\",\n            \"box_office\": \"12312\",\n            \"genre\": 2,\n            \"image_gallery\": [\n                1\n            ],\n            \"video_gallery\": [\n                1\n            ],\n            \"director\": [4],\n            \"writer\": [4],\n            \"actors\": [4],\n            \"producer\": [4]    \n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{prodURL}}/api/movies/movie/10",
+					"host": [
+						"{{prodURL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						"movie",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"c@gmail.com\",\n    \"password\": \"xyz12345\"\n}"
+				},
+				"url": {
+					"raw": "{{prodURL}}/api/user/login/",
+					"host": [
+						"{{prodURL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Review on Movie",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY4OTU1MzM2LCJpYXQiOjE2Njg5MjY1MzYsImp0aSI6IjZmMDdjMGMyNjdhZDQ1ZDk5ODZhMmQzYWI2YzBmM2UxIiwidXNlcl9pZCI6NH0.iQDwuonuyQETqeuxOtzG465ZICO5c0nmSB2RDTB_vuA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"movie\": 15,\n    \"title\": \"Test Title for Review\",\n    \"review_body\": \"Test Review body for Review\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localURL}}/api/movies/review/",
+					"host": [
+						"{{localURL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						"review",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Genre List",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{prodURL}}/api/movies/genre/",
+					"host": [
+						"{{prodURL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						"genre",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"b@gmail.com\",\n    \"name\": \"Test2\",\n    \"password\": 123456,\n    \"password2\": 123456,\n    \"tc\": \"False\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Home Movies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{prodURL}}/api/movies/home-movies/",
+					"host": [
+						"{{prodURL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						"home-movies",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change User Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU5ODg2ODUzLCJpYXQiOjE2NTk4ODUwNTMsImp0aSI6ImEzNjk0YzY3OWIzMzQ0ZWJiZmRkMGQ1MmVhY2E3NjMyIiwidXNlcl9pZCI6Mn0.2TPs58wjO8QF9BETw3v0aVkKz6_ZL6yZwCQFqN4AXbE",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\":\"test\",\r\n    \"password2\":\"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{prodURL}}/api/user/changepassword/",
+					"host": [
+						"{{prodURL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"changepassword",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYzMDQyMTE3LCJpYXQiOjE2NjMwMTMzMTcsImp0aSI6ImI4M2NmYTg1MWE3YjRhYWViNWFkOTY4ZGM5YzU1YjY4IiwidXNlcl9pZCI6NH0.muJJdxTpot8p17l5QFLAbEAifB3zCgPaVFmq-2PYmjg",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{prodURL}}/api/user/profile/",
+					"host": [
+						"{{prodURL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add User Ratings",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYzMTA1Nzk3LCJpYXQiOjE2NjMwNzY5OTcsImp0aSI6Ijc0ZjVlNzQ4ZGM5NzQ3MjhhNGRjZWE0MTBhMmM1OTUxIiwidXNlcl9pZCI6NH0.mgmwc5sB0ZOzSXZzbkEmM_FTEcyGN3iOegX-dh2Ig_E",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ratings\": 7,\n    \"user\": 3,\n    \"movie\": 15\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{prodURL}}/api/movies/rating/",
+					"host": [
+						"{{prodURL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						"rating",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updat User Ratings",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYyOTI3NjI1LCJpYXQiOjE2NjI4OTg4MjUsImp0aSI6IjA2NjMyNzgzZWRjYjRiODk5ZmZjMWJmYzhiOTdmODE0IiwidXNlcl9pZCI6NH0.vZW0MXwpSDRlVuX0otJm3tuPNvrbq-xUBp2rOPmHQtw",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ratings\": 4,\n    \"user\": 3,\n    \"movie\": 15\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{prodURL}}/api/movies/rating/11/",
+					"host": [
+						"{{prodURL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						"rating",
+						"11",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User Rating",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYzMTA2ODU2LCJpYXQiOjE2NjMwNzgwNTYsImp0aSI6IjIwY2Y3NWQxMmYyYTQ0OTdiOTZkNjI4Mjg0NzJlODk3IiwidXNlcl9pZCI6NH0.kh0fcKdh7-Dr7kiP5fY-HOWzqot7rgJ6mBsK7yavkhI",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{prodURL}}/api/movies/rating/12/",
+					"host": [
+						"{{prodURL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						"rating",
+						"12",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add to Wishlist",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYzMDI0MTY0LCJpYXQiOjE2NjI5OTUzNjQsImp0aSI6IjhlMDQxNzFiNzAxMzQyYjE5ZGI4Yzg3NjY3MmU0YTgyIiwidXNlcl9pZCI6NH0.YbML52C4HFvJ9bxwdmnhRhox1_y4tIcUzHi2_XOmmq4",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"to_watch\": 61\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{prodURL}}/api/user/user-wishlist/",
+					"host": [
+						"{{prodURL}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"user-wishlist",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IMDb Most Popular Movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{prodURL}}/api/movies/imdb-most-popular/",
+					"host": [
+						"{{prodURL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						"imdb-most-popular",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IMDb Top 250 Movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{prodURL}}/api/movies/imdb-top-250-movies/",
+					"host": [
+						"{{prodURL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						"imdb-top-250-movies",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IMDb Originals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{prodURL}}/api/movies/imdb-original/",
+					"host": [
+						"{{prodURL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						"imdb-original",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Popular Celebrities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{prodURL}}/api/actors/popular-celebs/",
+					"host": [
+						"{{prodURL}}"
+					],
+					"path": [
+						"api",
+						"actors",
+						"popular-celebs",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Celebrity Detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{prodURL}}/api/actors/celebrity/14",
+					"host": [
+						"{{prodURL}}"
+					],
+					"path": [
+						"api",
+						"actors",
+						"celebrity",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{prodURL}}/api/movies/search-movies/?search=T",
+					"host": [
+						"{{prodURL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						"search-movies",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "T"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Genre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localURL}}/api/movies/search/title/?title__in=Thriller",
+					"host": [
+						"{{localURL}}"
+					],
+					"path": [
+						"api",
+						"movies",
+						"search",
+						"title",
+						""
+					],
+					"query": [
+						{
+							"key": "title__in",
+							"value": "Thriller"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "locaURL",
+			"value": "127.0.0.1:8000"
+		},
+		{
+			"key": "localToken",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYyNzk5NDUwLCJpYXQiOjE2NjI3OTkxNTAsImp0aSI6ImY3OWRjNWFjODFjOTRlNTNhYWY4MGU2ZTNmOTJjYWUyIiwidXNlcl9pZCI6NH0.j3x2_i1dBdZKeF34p3xHPUFlh0fW1LiuDNQjgqzaFVk"
+		}
+	]
+}
